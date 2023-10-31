@@ -1,6 +1,6 @@
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import Navbar from './core/components/Navbar';
-// import Auth from 'pages/Auth';
+ import Auth from 'pages/Auth';
 // import Navbar from './core/components/Navbar';
 // import Admin from './pages/Admin';
 // import Catalog from './pages/Catalog';
@@ -11,6 +11,14 @@ import Footer from 'core/components/Footer';
 const Routes = () =>(
   <BrowserRouter>
     <Navbar/>
+    <Switch>
+
+    <Redirect from="/auth" to="/auth/login" exact/>
+      <Route path="/auth">
+          <Auth/>
+      </Route>
+
+    </Switch>
     {/* <Switch> */}
       
       {/* <Route path="/" exact>
@@ -24,11 +32,6 @@ const Routes = () =>(
       
       <Route path="/products/:productId">
         <ProductDetails/>
-      </Route>
-
-      <Redirect from="/auth" to="/auth/login" exact/>
-      <Route path="/auth">
-          <Auth/>
       </Route>
       
       <Redirect from="/admin" to="/admin/products" exact/>
