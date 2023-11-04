@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className="bg-primary main-nav">
 
-      <Link to="/dashboard" className="nav-logo-text">
+      <Link to="/home" className="nav-logo-text">
         <h4>MEUS PILA</h4>
       </Link>
       <button

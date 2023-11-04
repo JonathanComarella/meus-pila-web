@@ -6,12 +6,17 @@ import Navbar from './core/components/Navbar';
 // import Catalog from './pages/Catalog';
 // import ProductDetails from './pages/Catalog/components/ProductDetails';
 import Footer from 'core/components/Footer';
+import Home from 'pages/Home';
 
 
 const Routes = () =>(
   <BrowserRouter>
     <Navbar/>
     <Switch>
+
+    <Route path="/home" exact>
+        <Home/>
+      </Route>
 
     <Redirect from="/auth" to="/auth/login" exact/>
       <Route path="/auth">
